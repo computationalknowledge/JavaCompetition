@@ -1,5 +1,5 @@
 import java.util.*;
-
+// video: https://youtu.be/-0ZAjgcJ3dw
 // take all the numbers entered by user:
 // output the average:
 
