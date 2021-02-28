@@ -1,0 +1,42 @@
+import java.util.*;
+
+// take all the numbers entered by user:
+// output the average:
+
+public class MainApplication {
+	public static void main(String[] args) {
+		CalculateNumbers c = new CalculateNumbers();
+		Vector<Integer> results = new Vector<>();
+		results = c.GetUserInput();
+		System.out.println(c.findAverage(results));
+
+	}
+}
+
+class CalculateNumbers {
+	Scanner sc = new Scanner(System.in); // System.in is a standard input stream
+	Vector<Integer> userInput = new Vector<>();
+
+	public Vector<Integer> GetUserInput() {
+
+		int currentValue = -1;
+		System.out.println("enter some numbers: enter -1 to finish:");
+		currentValue = sc.nextInt();
+		userInput.add(currentValue);
+		
+		while (currentValue >= 0) {
+			currentValue = sc.nextInt();
+			userInput.add(currentValue);
+		}
+ 
+		return userInput;
+		}
+		
+	public float findAverage(Vector<Integer> a){
+		float sum = 0;  
+		for ( int i = 0 ; i<a.size() ; i++ ) {
+			sum += a.elementAt(i);
+		}
+		return sum / a.size();	
+	}
+}
